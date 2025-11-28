@@ -217,6 +217,10 @@
         {
           "type": "expression",
           "named": true
+        },
+        {
+          "type": "table",
+          "named": true
         }
       ]
     }
@@ -1744,6 +1748,10 @@
       "required": true,
       "types": [
         {
+          "type": "block",
+          "named": true
+        },
+        {
           "type": "expression",
           "named": true
         },
@@ -1970,6 +1978,7 @@
   {
     "type": "script",
     "named": true,
+    "root": true,
     "fields": {},
     "children": {
       "multiple": true,
@@ -2756,7 +2765,8 @@
   },
   {
     "type": "comment",
-    "named": true
+    "named": true,
+    "extra": true
   },
   {
     "type": "const",

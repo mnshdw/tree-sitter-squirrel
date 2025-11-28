@@ -530,7 +530,7 @@ module.exports = grammar({
       '(',
       optional($.parameters),
       ')',
-      $.expression,
+      choice($.block, $.expression),
     ),
 
     parenthesized_expression: $ => prec(PREC.PAREN, seq(
@@ -547,7 +547,7 @@ module.exports = grammar({
 
     array: $ => prec.right(seq(
       '[',
-      commaSep($.expression),
+      commaSep(choice($.expression, $.table)),
       optional(','),
       ']',
     )),
